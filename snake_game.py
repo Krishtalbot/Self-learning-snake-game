@@ -79,7 +79,7 @@ class SnakeGame:
         self.snake.insert(0, self.head)
 
         game_over = False
-        if self._is_collision(self):
+        if self._is_collision():
             game_over = True
             return game_over, score
 
@@ -91,7 +91,7 @@ class SnakeGame:
         return game_over, self.score
 
     def _is_collision(self):
-        if self.head.x > self.w - BLOCK_SIZE or if self.head.x < 0 or self.head.y > self.h - BLOCK_SIZE or self.head.y < 0:
+        if self.head.x > self.w - BLOCK_SIZE or self.head.x < 0 or self.head.y > self.h - BLOCK_SIZE or self.head.y < 0:
             return True
         if self.head in self.snake[1:]:
             return True
@@ -135,6 +135,6 @@ if __name__ == "__main__":
         if game_over == True:
             break
         
-    print("Final score: "+ score)
+    print("Final score: "+ str(score))
 
     pg.quit()
