@@ -21,9 +21,9 @@ BLOCK_SIZE = 20
 SPEED = 20
 BLACK = (0,0,0)
 WHITE = (255,255,255)
-RED = (200, 0, 0)
-BLUE1 = (0,0,255)
-BLUE2 = (0, 100, 255)
+RED = 0xFFE5B4
+BLUE1 = 0x4169e1
+BLUE2 = 0x4299f6
 
 class SnakeGame:
     def __init__(self, w=640, h=480):
