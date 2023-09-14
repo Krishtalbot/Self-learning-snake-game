@@ -18,7 +18,7 @@ class Direction(Enum):
 Point = namedtuple("Point", "x, y")
 
 BLOCK_SIZE = 20
-SPEED = 40
+SPEED = 20
 BLACK = (0,0,0)
 WHITE = (255,255,255)
 RED = (200, 0, 0)
@@ -81,7 +81,15 @@ class SnakeGame:
         game_over = False
         if self._is_collision():
             game_over = True
-            return game_over, score
+            return game_over, self.score
+
+        if self.head == self.food:
+            self.score += 1
+            self._place_food()
+        
+        else:
+            self.snake.pop()
+
 
         self._update_ui()
         self.clock.tick(SPEED)
