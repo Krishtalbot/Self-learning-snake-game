@@ -81,7 +81,7 @@ class SnakeGameAI:
 
         reward = 0
         game_over = False
-        if self._is_collision() or self.frame_iteration > 100*len(self.snake):
+        if self.is_collision() or self.frame_iteration > 100*len(self.snake):
             game_over = True
             reward = -10
             return reward, game_over, self.score
@@ -100,7 +100,7 @@ class SnakeGameAI:
 
         return reward, game_over, self.score
 
-    def _is_collision(self, pt = None):
+    def is_collision(self, pt = None):
         if pt is None:
             pt=self.head
         if pt.x > self.w - BLOCK_SIZE or pt.x < 0 or pt.y > self.h - BLOCK_SIZE or pt.y < 0:
@@ -151,4 +151,4 @@ class SnakeGameAI:
             y += BLOCK_SIZE
 
         self.head = Point(x, y)
-        
+
