@@ -137,6 +137,7 @@ class SnakeGame:
             y -= BLOCK_SIZE
         elif direction== Direction.DOWN:
             y += BLOCK_SIZE
+            y -= BLOCK_SIZE
 
         self.head = Point(x, y)
 
@@ -154,3 +155,4 @@ if __name__ == "__main__":
     print("Final score: "+ str(score))
 
     pg.quit()
+#just having fun
