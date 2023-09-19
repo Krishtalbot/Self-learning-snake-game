@@ -126,7 +126,7 @@ def train():
 
             if score > record:
                 record = score
-                # agent.model.save()
+                agent.model.save()
             print('Game', agent.n_game, 'Score', score, "Record: ", record)
 
             #TODO: plot
